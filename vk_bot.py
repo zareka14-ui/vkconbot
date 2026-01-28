@@ -48,7 +48,7 @@ def start_bot():
             # Логика состояний (State Machine)
             if text.lower() in ['начать', 'привет', 'меню']:
                 user_states[user_id] = {"step": "CHOOSING_SERVICE"}
-                send_msg(user_id, "🌿 Добро пожаловать в мастерскую «Белая Род»!\nВыберите нужную услугу:", get_main_keyboard())
+                send_msg(user_id, "🌿 Добро пожаловать в  нашу мастерскую !\nВыберите нужную услугу:", get_main_keyboard())
 
             elif user_id in user_states:
                 state = user_states[user_id]
@@ -89,7 +89,7 @@ def start_bot():
                     if ADMIN_ID:
                         vk.messages.send(user_id=ADMIN_ID, message=report, random_id=0)
                     
-                    send_msg(user_id, "🎉 Спасибо! Заявка принята. Я свяжусь с вами в ближайшее время.", get_main_keyboard())
+                    send_msg(user_id, "🎉 Спасибо! Заявка принята. Мы свяжемся  с вами в ближайшее время.", get_main_keyboard())
                     del user_states[user_id]
 
 if __name__ == "__main__":
